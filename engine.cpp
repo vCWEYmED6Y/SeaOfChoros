@@ -420,56 +420,59 @@ void render(ImDrawList* drawList)
 				{
 					cfg->aim.cannon.lowAim = !cfg->aim.cannon.lowAim;
 				}
-
+				if (GetAsyncKeyState(VK_F4) & 1)
+				{
+					cfg->aim.cannon.players = !cfg->aim.cannon.players;
+				}
 
 				int cannonlocalsets = 0;
 
 				if (cfg->aim.cannon.players)
 				{
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f), ImColor(0, 0, 0, 255), "Player Cannon Aimbot", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 323.f), ImColor(0, 255, 0, 255), "Player Cannon Aimbot", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f), ImColor(0, 0, 0, 255), "Player Aimbot", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 323.f), ImColor(255, 90, 100, 255), "Player Aimbot", 0, 0.0f, 0);
 					cannonlocalsets++;
 				}
 				if (cfg->aim.cannon.skeletons)
 				{
 					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Skeleton Aimbot", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 323.f + (float)(cannonlocalsets * 20)), ImColor(0, 255, 0, 255), "Skeleton Aimbot", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 323.f + (float)(cannonlocalsets * 20)), ImColor(160, 175, 180, 255), "Skeleton Aimbot", 0, 0.0f, 0);
 					cannonlocalsets++;
 				}
 				if (cfg->aim.cannon.chains)
 				{
 					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Chain Aimbot", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 255, 0, 255), "Chain Aimbot", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(110, 110, 110, 255), "Chain Aimbot", 0, 0.0f, 0);
 					cannonlocalsets++;
 				}
 				if (cfg->aim.cannon.deckshots)
 				{
 					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Deck Shots", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 255, 0, 255), "Deck Shots", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(165, 120, 90, 255), "Deck Shots", 0, 0.0f, 0);
 					cannonlocalsets++;
 				}
 				if (cfg->aim.cannon.visibleOnly)
 				{
 					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Visible Only", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 255, 0, 255), "Visible Only", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(255, 255, 255, 255), "Visible Only", 0, 0.0f, 0);
 					cannonlocalsets++;
 				}
 				if (cfg->aim.cannon.instant)
 				{
 					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Instant Shoot", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 255, 0, 255), "Instant Shoot", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Instant Shoot", 0, 0.0f, 0);
 					cannonlocalsets++;
 				}
 				if (cfg->aim.cannon.ghostShips)
 				{
 					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Ghost Ships", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 255, 0, 255), "Ghost Ships", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(90, 245, 200, 255), "Ghost Ships", 0, 0.0f, 0);
 					cannonlocalsets++;
 				}
 				if (cfg->aim.cannon.lowAim)
 				{
 					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1656.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 0, 0, 255), "Low Aim", 0, 0.0f, 0);
-					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(0, 255, 0, 255), "Low Aim", 0, 0.0f, 0);
+					ImGui::GetWindowDrawList()->AddText(ImGui::GetFont(), 20, ImVec2(1655.f, 325.f + (float)(cannonlocalsets * 20)), ImColor(160, 175, 180, 255), "Low Aim", 0, 0.0f, 0);
 				}
 
 				error_code = 9;
@@ -630,7 +633,7 @@ void render(ImDrawList* drawList)
 					if (shipsService)
 					{
 						ImGui::BeginChild("Info", { 0.f, 18.f });
-						ImGui::Text("Server Player List | Total Ships (Including AI): %d", shipsService->GetNumShips());
+						ImGui::Text("Server Player List | Total Ships: %d", shipsService->GetNumShips());
 						ImGui::EndChild();
 					}
 					auto crewService = gameState->CrewService;
@@ -943,30 +946,36 @@ void render(ImDrawList* drawList)
 										if (actor->compareName("BP_Small"))
 											sprintf_s(buf, sizeof(buf), "Sloop [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
 										else if (actor->compareName("BP_Medium"))
-											sprintf_s(buf, sizeof(buf), "Brigatine [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
+											sprintf_s(buf, sizeof(buf), "Brigantine [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
 										else if (actor->compareName("BP_Large"))
 											sprintf_s(buf, sizeof(buf), "Galleon [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
 										else if (actor->compareName("AISmall") && cfg->esp.ships.skeletons)
-											sprintf_s(buf, sizeof(buf), "AI Sloop [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
+											sprintf_s(buf, sizeof(buf), "Skelly Sloop [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
 										else if (actor->compareName("AILarge") && cfg->esp.ships.skeletons)
-											sprintf_s(buf, sizeof(buf), "AI Galleon [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
+											sprintf_s(buf, sizeof(buf), "Skelly Galleon [%.0f%%][%.0fm][%.0fm/s]", internalWater, dist, velocity);
 
-										RenderText(drawList, buf, screen, cfg->esp.ships.color, 20);
+										if (actor->compareName("AI"))
+											RenderText(drawList, buf, screen, { 1.f,1.f,1.f,1.f }, 20);
+										else 
+											RenderText(drawList, buf, screen, cfg->esp.ships.color, 20);
 									}
 									else if (actor->isFarShip() && dist > 1725)
 									{
 										if (actor->compareName("BP_Small"))
 											sprintf_s(buf, sizeof(buf), "Sloop [%.0fm]", dist);
 										else if (actor->compareName("BP_Medium"))
-											sprintf_s(buf, sizeof(buf), "Brigatine [%.0fm]", dist);
+											sprintf_s(buf, sizeof(buf), "Brigantine [%.0fm]", dist);
 										else if (actor->compareName("BP_Large"))
 											sprintf_s(buf, sizeof(buf), "Galleon [%.0fm]", dist);
 										else if (actor->compareName("AISmall") && cfg->esp.ships.skeletons)
-											sprintf_s(buf, sizeof(buf), "AI Sloop [%.0fm]", dist);
+											sprintf_s(buf, sizeof(buf), "Skelly Sloop [%.0fm]", dist);
 										else if (actor->compareName("AILarge") && cfg->esp.ships.skeletons)
-											sprintf_s(buf, sizeof(buf), "AI Galleon [%.0fm]", dist);
+											sprintf_s(buf, sizeof(buf), "Skelly Galleon [%.0fm]", dist);
 
-										RenderText(drawList, buf, screen, cfg->esp.ships.color, 20);
+										if (actor->compareName("AI"))
+											RenderText(drawList, buf, screen, { 1.f,1.f,1.f,1.f }, 20);
+										else 
+											RenderText(drawList, buf, screen, cfg->esp.ships.color, 20);
 									}
 								}
 							}
@@ -988,7 +997,7 @@ void render(ImDrawList* drawList)
 									default: snprintf(buf + len, sizeof(buf) - len, "Lives: %d", lives); break;
 									}
 									if (lives > 0)
-										RenderText(drawList, buf, screen, cfg->esp.ships.color, 20);
+										RenderText(drawList, buf, screen, { 1.f,1.f,1.f,1.f }, 20);
 								}
 							}
 							if (actor->isShip())
@@ -1384,11 +1393,11 @@ void render(ImDrawList* drawList)
 								if (playerController->ProjectWorldLocationToScreen(location, screen))
 								{
 									if (actor->compareName("Ruby"))
-										sprintf_s(buf, sizeof(buf), "Ruby UnderWater Statue [%.0fm]", dist);
+										sprintf_s(buf, sizeof(buf), "Ruby Mermaid Statue [%.0fm]", dist);
 									if (actor->compareName("Emerald"))
-										sprintf_s(buf, sizeof(buf), "Emerald UnderWater Statue [%.0fm]", dist);
+										sprintf_s(buf, sizeof(buf), "Emerald Mermaid Statue [%.0fm]", dist);
 									if (actor->compareName("Sapphire"))
-										sprintf_s(buf, sizeof(buf), "Sapphire UnderWater Statue [%.0fm]", dist);
+										sprintf_s(buf, sizeof(buf), "Sapphire Mermaid Statue [%.0fm]", dist);
 									if (cfg->esp.items.nameToggle)
 									{
 										if (GetAsyncKeyState(0x52)) // R Key
