@@ -653,7 +653,7 @@ void render(ImDrawList* drawList)
 									ImGui::Text("Sloop");
 									break;
 								case 3:
-									ImGui::Text("Brigatine");
+									ImGui::Text("Brigantine");
 									break;
 								case 4:
 									ImGui::Text("Galleon");
@@ -1588,10 +1588,10 @@ void render(ImDrawList* drawList)
 										char buf[0x64];
 										ZeroMemory(buf, sizeof(buf));
 										if (actor->compareName("ShipCloud"))
-											sprintf_s(buf, "Fleet [%.0fm]", dist);
+											sprintf_s(buf, "Skelly Fleet [%.0fm]", dist);
 										else if (actor->compareName("AshenLord"))
-											sprintf_s(buf, "Ashen Lord [%.0fm]", dist);
-										else if (actor->compareName("Flameheart"))
+											sprintf_s(buf, "Ashen Winds [%.0fm]", dist);
+										else if (actor->compareName("BP_GhostShip_TornadoCloud"))
 											sprintf_s(buf, "Flame Heart [%.0fm]", dist);
 										else if (actor->compareName("LegendSkellyFort"))
 											sprintf_s(buf, "Fort of Fortune [%.0fm]", dist);
@@ -3093,15 +3093,15 @@ std::string getIslandNameByCode(int code)
 std::string getShortName(std::string name)
 {
 	if (name.find("cannon_ball") != std::string::npos)
-		return "Cannon Ball";
+		return "Cannon";
 	if (name.find("cannonball_chain_shot") != std::string::npos)
-		return "Cannon Chain";
+		return "ChainS";
 	if (name.find("cannonball_Grenade") != std::string::npos)
-		return "Dispersion Ball";
+		return "BlunderB";
 	if (name.find("cannonball_cur_fire") != std::string::npos)
-		return "Fire Ball";
+		return "FireB";
 	if (name.find("cannonball_cur") != std::string::npos)
-		return "Cursed Cannon Ball";
+		return "CurseC";
 
 	if (name.find("repair_wood") != std::string::npos)
 		return "Wood";
